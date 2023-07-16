@@ -6,7 +6,7 @@ const Home = async () => {
 		<>
 			<div
 				id='hero-container'
-				className='min-h-screen bg-[url("./content/om-oss/image.jpeg")] bg-cover bg-center'
+				className='min-h-screen bg-[url("./content/om-oss/image.jpeg")] bg-cover bg-fixed bg-center'
 			>
 				<div className='full-w-container min-h-screen bg-primary-950 bg-opacity-30 pt-32'>
 					<section className='max-w-container flex justify-center pt-32 text-center text-primary-100 md:px-24'>

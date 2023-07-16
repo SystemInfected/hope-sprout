@@ -42,7 +42,7 @@ const Navigation = () => {
 				reverseColor
 					? 'bg-transparent text-primary-100'
 					: 'bg-primary-100 text-primary-950'
-			}`}
+			} transition-colors`}
 		>
 			<div className='max-w-container flex items-center justify-between'>
 				<Link href='/' className='text-lg font-bold'>
