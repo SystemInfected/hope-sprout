@@ -11,19 +11,19 @@ const poppins = Poppins({
 export const metadata: Metadata = {
 	title: 'HopeSprout',
 	description: 'HopeSprout',
+	viewport:
+		'width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover',
 }
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<html lang='en'>
-			<body className={poppins.className}>
+		<html lang='sv'>
+			<body className={`${poppins.className} bg-primary-100 text-primary-950`}>
 				<Navigation />
 				{children}
 			</body>
 		</html>
 	)
 }
+
+export default RootLayout
