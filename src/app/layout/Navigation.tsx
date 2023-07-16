@@ -1,5 +1,7 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import React from 'react'
 import MenuIcon from '../components/MenuIcon'
 
 const mainNavigation = [
@@ -9,8 +11,39 @@ const mainNavigation = [
 ]
 
 const Navigation = () => {
+	const [reverseColor, setReverseColor] = useState(true)
+
+	useEffect(() => {
+		const heroContainer = document.querySelector('#hero-container')
+		const navContainer = document.querySelector('#nav-container')
+
+		if (window && heroContainer && navContainer) {
+			const navContainerRect = navContainer.getBoundingClientRect()
+
+			const onScroll = () => {
+				const heroContainerRect = heroContainer.getBoundingClientRect()
+				setReverseColor(
+					Math.abs(heroContainerRect.y) <
+						heroContainerRect.height - navContainerRect.height
+				)
+			}
+
+			window.removeEventListener('scroll', onScroll)
+			window.addEventListener('scroll', onScroll, { passive: true })
+
+			return () => window.removeEventListener('scroll', onScroll)
+		}
+	}, [])
+
 	return (
-		<div className='full-w-container fixed z-50 bg-primary-100 text-primary-950 py-6-safe'>
+		<div
+			id='nav-container'
+			className={`full-w-container fixed z-50 py-6-safe ${
+				reverseColor
+					? 'bg-transparent text-primary-100'
+					: 'bg-primary-100 text-primary-950'
+			}`}
+		>
 			<div className='max-w-container flex items-center justify-between'>
 				<Link href='/' className='text-lg font-bold'>
 					HopeSprout
