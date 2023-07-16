@@ -44,6 +44,11 @@
 	.max-w-container {
 		@apply w-full max-w-screen-2xl;
 	}
+	@supports (-webkit-touch-callout: none) {
+		.bg-fixed {
+			background-attachment: scroll;
+		}
+	}
 }
 
 /* @media (prefers-color-scheme: dark) {
