@@ -40,9 +40,9 @@ const Navigation = () => {
 			id='nav-container'
 			className={`full-w-container fixed z-50 py-6-safe ${
 				reverseColor
-					? 'bg-transparent text-primary-100'
-					: 'bg-primary-100 text-primary-950'
-			} transition-colors`}
+					? 'bg-transparent text-primary-100 shadow-none'
+					: 'bg-primary-100 text-primary-950 shadow'
+			} transition-[color,background-color,box-shadow]`}
 		>
 			<div className='max-w-container flex items-center justify-between'>
 				<Link href='/' className='text-lg font-bold'>
