@@ -92,7 +92,7 @@ const Navigation = () => {
 						className='md:display-none fixed inset-0 z-40 backdrop-blur-sm'
 						onClick={() => setMobileNavOpen(false)}
 					/>
-					<div className='full-w-container fixed left-0 top-0 z-50 flex flex-col gap-12 bg-primary-950 text-primary-100 py-6-safe'>
+					<div className='full-w-container md:display-none fixed left-0 top-0 z-50 flex flex-col gap-12 bg-primary-950 text-primary-100 py-6-safe'>
 						<div className='max-w-container flex items-center justify-between'>
 							<Link href='/' className='flex gap-2 text-lg font-bold'>
 								<Logo />
