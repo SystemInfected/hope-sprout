@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 	description: 'HopeSprout',
 	viewport:
 		'width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover',
+	themeColor: '#0ea5e9',
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

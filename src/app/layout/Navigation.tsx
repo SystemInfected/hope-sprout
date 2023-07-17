@@ -46,8 +46,9 @@ const Navigation = () => {
 			} transition-[color,background-color,box-shadow]`}
 		>
 			<div className='max-w-container flex items-center justify-between'>
-				<Link href='/' className='flex gap-3 text-lg font-bold'>
-					<Logo /> HopeSprout
+				<Link href='/' className='flex gap-2 text-lg font-bold'>
+					<Logo />
+					HopeSprout
 				</Link>
 				<nav className='display-none items-center justify-end gap-6 text-sm uppercase tracking-widest sm:flex'>
 					{mainNavigation.map((nav, index) => (

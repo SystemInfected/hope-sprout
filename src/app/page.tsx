@@ -17,8 +17,8 @@ const Home = async () => {
 				</div>
 			</div>
 			<div className='full-w-container py-16 text-primary-950'>
-				<section className='max-w-container flex justify-center text-center text-sm'>
-					<div className='max-w-md'>
+				<section className='max-w-container flex justify-center text-center'>
+					<div className='max-w-lg'>
 						<OmOssContent />
 					</div>
 				</section>
@@ -31,8 +31,8 @@ const Home = async () => {
 				</div>
 			</div>
 			<div className='full-w-container py-16 text-primary-950'>
-				<section className='max-w-container flex justify-center text-center text-sm'>
-					<div className='max-w-md'>
+				<section className='max-w-container flex justify-center text-center'>
+					<div className='max-w-lg'>
 						<VisionContent />
 					</div>
 				</section>
