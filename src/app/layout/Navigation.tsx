@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import MenuIcon from '../components/MenuIcon'
+import Logo from '../components/Logo'
 
 const mainNavigation = [
 	{ title: 'Om oss', link: '/' },
@@ -45,10 +46,10 @@ const Navigation = () => {
 			} transition-[color,background-color,box-shadow]`}
 		>
 			<div className='max-w-container flex items-center justify-between'>
-				<Link href='/' className='text-lg font-bold'>
-					HopeSprout
+				<Link href='/' className='flex gap-3 text-lg font-bold'>
+					<Logo /> HopeSprout
 				</Link>
-				<nav className='hidden items-center justify-end gap-6 text-sm uppercase tracking-widest sm:flex'>
+				<nav className='display-none items-center justify-end gap-6 text-sm uppercase tracking-widest sm:flex'>
 					{mainNavigation.map((nav, index) => (
 						<Link
 							className='decoration-2 underline-offset-4 hover:underline'
@@ -59,7 +60,7 @@ const Navigation = () => {
 						</Link>
 					))}
 				</nav>
-				<nav className='flex items-center justify-end sm:hidden'>
+				<nav className='sm:display-none flex items-center justify-end'>
 					<MenuIcon />
 				</nav>
 			</div>

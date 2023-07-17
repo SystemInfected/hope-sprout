@@ -49,6 +49,9 @@
 			background-attachment: scroll;
 		}
 	}
+	.display-none {
+		display: none;
+	}
 }
 
 /* @media (prefers-color-scheme: dark) {
