@@ -33,7 +33,7 @@
 	h5,
 	h6 {
 		margin-bottom: 1em;
-		@apply font-semibold leading-normal sm:leading-normal md:leading-normal;
+		@apply font-semibold leading-tight sm:leading-tight md:leading-tight;
 	}
 	p + h1,
 	p + h2,
