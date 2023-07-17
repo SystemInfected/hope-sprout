@@ -16,7 +16,7 @@ const mainNavigation = [
 
 const Navigation = () => {
 	const [reverseColor, setReverseColor] = useState(true)
-	const [mobileNavOpen, setMobileNavOpen] = useState(true)
+	const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
 	const pathName = usePathname()
 
