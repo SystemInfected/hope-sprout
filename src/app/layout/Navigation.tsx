@@ -22,6 +22,7 @@ const Navigation = () => {
 
 	useEffect(() => {
 		setReverseColor(true)
+		setMobileNavOpen(false)
 		const imageContainers = document.querySelectorAll('#image-container')
 		const navContainer = document.querySelector('#nav-container')
 
@@ -56,7 +57,7 @@ const Navigation = () => {
 		<>
 			<div
 				id='nav-container'
-				className={`full-w-container fixed z-30 max-h-[76px] py-6-safe ${
+				className={`full-w-container fixed left-0 top-0 z-30 py-6-safe ${
 					reverseColor
 						? 'bg-transparent text-primary-100 shadow-none'
 						: 'bg-primary-100 text-primary-950 shadow'
@@ -86,11 +87,12 @@ const Navigation = () => {
 				</div>
 			</div>
 			{mobileNavOpen ? (
-				<div
-					className='md:display-none fixed inset-0 z-40 backdrop-blur-sm'
-					onClick={() => setMobileNavOpen(false)}
-				>
-					<div className='full-w-container z-50 flex flex-col gap-12 bg-primary-950 text-primary-100 py-6-safe'>
+				<>
+					<div
+						className='md:display-none fixed inset-0 z-40 backdrop-blur-sm'
+						onClick={() => setMobileNavOpen(false)}
+					/>
+					<div className='full-w-container fixed left-0 top-0 z-50 flex flex-col gap-12 bg-primary-950 text-primary-100 py-6-safe'>
 						<div className='max-w-container flex items-center justify-between'>
 							<Link href='/' className='flex gap-2 text-lg font-bold'>
 								<Logo />
@@ -112,7 +114,7 @@ const Navigation = () => {
 							))}
 						</nav>
 					</div>
-				</div>
+				</>
 			) : null}
 		</>
 	)
