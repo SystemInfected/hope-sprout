@@ -1,5 +1,11 @@
+import { Metadata } from 'next'
 import OurWorkHeader from '@/content/vart-arbete/header.mdx'
 import OurWorkContent from '@/content/vart-arbete/content.mdx'
+import metaData from '@/content/vart-arbete/metadata.json'
+
+export const metadata: Metadata = {
+	...metaData,
+}
 
 const OurWork = async () => {
 	return (

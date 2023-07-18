@@ -1,5 +1,12 @@
+import { Metadata } from 'next'
 import ContactHeader from '@/content/kontakt/header.mdx'
 import ContactContent from '@/content/kontakt/content.mdx'
+import metaData from '@/content/kontakt/metadata.json'
+import ContactForm from '@/components/ContactForm'
+
+export const metadata: Metadata = {
+	...metaData,
+}
 
 const Contact = async () => {
 	return (
@@ -21,6 +28,7 @@ const Contact = async () => {
 					</div>
 				</section>
 			</div>
+			<ContactForm />
 		</>
 	)
 }

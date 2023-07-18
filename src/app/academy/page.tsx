@@ -1,5 +1,11 @@
+import { Metadata } from 'next'
 import AcademyHeader from '@/content/academy/header.mdx'
 import AcademyContent from '@/content/academy/content.mdx'
+import metaData from '@/content/academy/metadata.json'
+
+export const metadata: Metadata = {
+	...metaData,
+}
 
 const Academy = async () => {
 	return (

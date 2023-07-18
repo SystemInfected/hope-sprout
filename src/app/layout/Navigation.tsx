@@ -59,7 +59,7 @@ const Navigation = () => {
 				id='nav-container'
 				className={`full-w-container fixed left-0 top-0 z-30 py-6-safe ${
 					reverseColor
-						? 'bg-transparent text-primary-100 shadow-none'
+						? 'bg-transparent text-primary-100 shadow-sm backdrop-blur-sm'
 						: 'bg-primary-100 text-primary-950 shadow'
 				} transition-[color,background-color,box-shadow] duration-300`}
 			>

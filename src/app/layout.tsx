@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import Navigation from './layout/Navigation'
+import Footer from './layout/Footer'
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -21,6 +22,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 			<body className={`${poppins.className} bg-primary-100 text-primary-950`}>
 				<Navigation />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
