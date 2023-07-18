@@ -27,7 +27,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 						lineHeight: '1.5em',
 						fontFamily: 'inherit',
 					}}
-					autoClose={false}
 				/>
 				<Navigation />
 				{children}
