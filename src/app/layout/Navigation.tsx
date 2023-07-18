@@ -20,8 +20,22 @@ const Navigation = () => {
 
 	const pathName = usePathname()
 
+	const isNavbarOverImage = (
+		imageContainers: NodeListOf<Element>,
+		navContainerRect: DOMRect
+	) =>
+		Array.from(imageContainers).some((imageContainer) => {
+			const imageContainerRect = imageContainer.getBoundingClientRect()
+
+			return (
+				imageContainerRect.y - navContainerRect.height / 2 <= 0 &&
+				imageContainerRect.y +
+					(imageContainerRect.height - navContainerRect.height / 2) >
+					0
+			)
+		})
+
 	useEffect(() => {
-		setReverseColor(true)
 		setMobileNavOpen(false)
 		const imageContainers = document.querySelectorAll('#image-container')
 		const navContainer = document.querySelector('#nav-container')
@@ -29,21 +43,22 @@ const Navigation = () => {
 		if (window && imageContainers.length && navContainer) {
 			const navContainerRect = navContainer.getBoundingClientRect()
 
+			setReverseColor(isNavbarOverImage(imageContainers, navContainerRect))
+		}
+	}, [])
+
+	useEffect(() => {
+		setMobileNavOpen(false)
+		const imageContainers = document.querySelectorAll('#image-container')
+		const navContainer = document.querySelector('#nav-container')
+
+		if (window && imageContainers.length && navContainer) {
+			const navContainerRect = navContainer.getBoundingClientRect()
+
+			setReverseColor(isNavbarOverImage(imageContainers, navContainerRect))
+
 			const onScroll = () => {
-				const isNavbarOverImage = Array.from(imageContainers).some(
-					(imageContainer) => {
-						const imageContainerRect = imageContainer.getBoundingClientRect()
-
-						return (
-							imageContainerRect.y - navContainerRect.height / 2 <= 0 &&
-							imageContainerRect.y +
-								(imageContainerRect.height - navContainerRect.height / 2) >
-								0
-						)
-					}
-				)
-
-				setReverseColor(isNavbarOverImage)
+				setReverseColor(isNavbarOverImage(imageContainers, navContainerRect))
 			}
 
 			window.removeEventListener('scroll', onScroll)
@@ -80,7 +95,10 @@ const Navigation = () => {
 						))}
 					</nav>
 					<nav className='md:display-none flex items-center justify-end'>
-						<div onClick={() => setMobileNavOpen(true)}>
+						<div
+							className='cursor-pointer'
+							onClick={() => setMobileNavOpen(true)}
+						>
 							<MenuIcon />
 						</div>
 					</nav>
@@ -98,7 +116,10 @@ const Navigation = () => {
 								<Logo />
 								HopeSprout
 							</Link>
-							<div onClick={() => setMobileNavOpen(false)}>
+							<div
+								className='cursor-pointer'
+								onClick={() => setMobileNavOpen(false)}
+							>
 								<CloseIcon />
 							</div>
 						</div>

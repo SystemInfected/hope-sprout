@@ -43,6 +43,14 @@
 	p + h6 {
 		margin-top: 3em;
 	}
+	input,
+	textarea,
+	button {
+		@apply w-full rounded-lg border border-gray-300 bg-primary-50 px-4 py-2 text-sm;
+	}
+	label {
+		@apply text-xs text-gray-500;
+	}
 }
 
 @layer utilities {

@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import { ToastContainer } from 'react-toastify'
 import Navigation from './layout/Navigation'
 import Footer from './layout/Footer'
 
@@ -20,6 +21,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html lang='sv'>
 			<body className={`${poppins.className} bg-primary-100 text-primary-950`}>
+				<ToastContainer
+					style={{
+						fontSize: '0.9rem',
+						lineHeight: '1.5em',
+						fontFamily: 'inherit',
+					}}
+				/>
 				<Navigation />
 				{children}
 				<Footer />
