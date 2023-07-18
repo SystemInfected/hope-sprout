@@ -9,7 +9,7 @@ interface Props {
 	startPage?: boolean
 }
 
-const ContactForm = ({ startPage }: Props) => {
+const ContactForm = ({ startPage = false }: Props) => {
 	const [mailData, setMailData] = useState({
 		name: '',
 		phone: '',
@@ -184,10 +184,6 @@ const ContactForm = ({ startPage }: Props) => {
 			</div>
 		</>
 	)
-}
-
-ContactForm.defaultProps = {
-	startPage: false,
 }
 
 export default ContactForm

@@ -37,8 +37,11 @@ export async function POST(req: Request) {
 	try {
 		await transporter.sendMail(mailData)
 		return NextResponse.json({ status: 200 })
-	} catch (error: any) {
+	} catch (error) {
 		console.error(error)
-		return NextResponse.json({ status: error.response.status })
+		return NextResponse.json(
+			{ error: 'Internal Server Error' },
+			{ status: 500 }
+		)
 	}
 }
