@@ -139,7 +139,7 @@ const ContactForm = ({ startPage = false }: Props) => {
 							/>
 						</div>
 						<div className='w-full'>
-							<label htmlFor='email'>E-post</label>
+							<label htmlFor='email'>E-post*</label>
 							<input
 								type='email'
 								name='email'
@@ -157,7 +157,7 @@ const ContactForm = ({ startPage = false }: Props) => {
 						</div>
 					</div>
 					<div className='w-full'>
-						<label htmlFor='message'>Meddelande</label>
+						<label htmlFor='message'>Meddelande*</label>
 						<textarea
 							className='h-24'
 							name='message'
