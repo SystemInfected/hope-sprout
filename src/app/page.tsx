@@ -47,7 +47,7 @@ const Home = async () => {
 					</div>
 				</section>
 			</div>
-			<ContactForm />
+			<ContactForm startPage />
 		</>
 	)
 }
